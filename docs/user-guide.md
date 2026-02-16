@@ -4,12 +4,22 @@
 
 agent-conf manages AI agent configurations across multiple tools. You write rules once in a vendor-neutral format, and agent-conf compiles them into tool-specific config files (`CLAUDE.md`, `.cursor/rules/`, etc.).
 
+## Installation
+
+```bash
+# Install from GitHub
+uv tool install git+https://github.com/agenture-org/agent-conf
+
+# Or install from a local clone for development
+git clone https://github.com/agenture-org/agent-conf.git
+cd agent-conf
+uv sync
+uv run agent-conf --version
+```
+
 ## Quick Start
 
 ```bash
-# Install
-uv tool install agent-conf
-
 # Bootstrap in your repo
 cd my-project
 agent-conf init
