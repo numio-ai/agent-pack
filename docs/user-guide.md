@@ -14,7 +14,7 @@ uv tool install git+https://github.com/vkroz/agent-conf
 git clone https://github.com/agenture-org/agent-conf.git
 cd agent-conf
 uv sync
-uv run agent-conf --version
+uv run agentconf --version
 ```
 
 ## Quick Start
@@ -22,16 +22,16 @@ uv run agent-conf --version
 ```bash
 # Bootstrap in your repo
 cd my-project
-agent-conf init
+agentconf init
 
 # Edit your rules in agent-conf/
 # Then generate tool-specific configs
-agent-conf generate
+agentconf generate
 ```
 
 ## CLI Commands
 
-### `agent-conf init`
+### `agentconf init`
 
 Creates the `agent-conf/` directory structure in the current repo:
 
@@ -44,24 +44,24 @@ agent-conf/
     my-command.md        # Slash-command definitions
 ```
 
-### `agent-conf generate`
+### `agentconf generate`
 
 Reads `agent-conf/agent-conf.yaml` and canonical rules, produces tool-specific output files. Generated files are placed alongside `agent-conf/` in a `.generated-agent-conf/` directory, then copied to the locations each tool expects.
 
-Example: with `agents: [claude, cursor]`, running `agent-conf generate` produces:
+Example: with `agents: [claude, cursor]`, running `agentconf generate` produces:
 - `CLAUDE.md` at the repo root
 - `.cursor/rules/*.mdc` files
 
-### `agent-conf sync`
+### `agentconf sync`
 
 Pulls shared configurations from remote git repositories into your local `agent-conf/` directory.
 
 ```bash
 # Sync from a public rules repo
-agent-conf sync https://github.com/agenture-org/agent-conf-community
+agentconf sync https://github.com/agenture-org/agent-conf-community
 
 # Sync from an org-private repo
-agent-conf sync git@github.com:my-org/agent-conf-shared.git
+agentconf sync git@github.com:my-org/agent-conf-shared.git
 ```
 
 ## Configuration: `agent-conf.yaml`
@@ -132,7 +132,7 @@ nested_depth: 1
 gitignore: true
 ```
 
-Running `agent-conf generate` produces:
+Running `agentconf generate` produces:
 
 ```
 my-project/

@@ -26,11 +26,11 @@ V1 supports two generation targets:
 
 ### Functional Requirements
 
-**F1: Init** (`agent-conf init`)
+**F1: Init** (`agentconf init`)
 - Create `agent-conf/` directory with `agent-conf.yaml`, `rules/`, `commands/` subdirectories
 - Optionally detect existing tool-specific configs and offer to import them into canonical format
 
-**F2: Generate** (`agent-conf generate`)
+**F2: Generate** (`agentconf generate`)
 - Read `agent-conf.yaml` for target agents and settings
 - Read all canonical rules from `agent-conf/rules/` and `agent-conf/commands/`
 - For each target agent, produce output in the expected format and location:
@@ -39,7 +39,7 @@ V1 supports two generation targets:
 - Respect `nested_depth` — generate configs in subdirectories up to N levels deep
 - Optionally update `.gitignore` with generated file paths
 
-**F3: Sync** (`agent-conf sync <remote>`)
+**F3: Sync** (`agentconf sync <remote>`)
 - Clone/pull a remote git repo containing shared canonical rules
 - Merge remote rules into local `agent-conf/` directory
 - Conflict resolution: local rules override remote rules with the same filename

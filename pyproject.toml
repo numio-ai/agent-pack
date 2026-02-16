@@ -6,12 +6,12 @@ readme = "README.md"
 license = "Apache-2.0"
 requires-python = ">=3.11"
 dependencies = [
-    "click>=8.0",
+    "typer>=0.15",
     "pyyaml>=6.0",
 ]
 
 [project.scripts]
-agent-conf = "agent_conf.cli:cli"
+agentconf = "agent_conf.cli:app"
 
 [dependency-groups]
 dev = [

@@ -1,30 +1,28 @@
 """Smoke tests for the CLI."""
 
-from click.testing import CliRunner
+from typer.testing import CliRunner
 
-from agent_conf.cli import cli
+from agent_conf.cli import app
+
+runner = CliRunner()
 
 
 def test_version():
-    runner = CliRunner()
-    result = runner.invoke(cli, ["--version"])
+    result = runner.invoke(app, ["--version"])
     assert result.exit_code == 0
     assert "0.1.0" in result.output
 
 
 def test_init_stub():
-    runner = CliRunner()
-    result = runner.invoke(cli, ["init"])
+    result = runner.invoke(app, ["init"])
     assert result.exit_code == 0
 
 
 def test_generate_stub():
-    runner = CliRunner()
-    result = runner.invoke(cli, ["generate"])
+    result = runner.invoke(app, ["generate"])
     assert result.exit_code == 0
 
 
 def test_sync_stub():
-    runner = CliRunner()
-    result = runner.invoke(cli, ["sync"])
+    result = runner.invoke(app, ["sync"])
     assert result.exit_code == 0
