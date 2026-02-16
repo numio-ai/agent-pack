@@ -10,9 +10,9 @@ The core abstraction is **hierarchical inheritance** — configurations resolve 
 
 ## Core CLI Commands
 
-- **`agent-conf init`** — Bootstrap the `agent-conf/` directory structure in a repo
-- **`agent-conf generate`** — Compile canonical rulesets into tool-specific config files
-- **`agent-conf sync`** — Pull shared configurations from remote git repos (public + org-private)
+- **`agentconf init`** — Bootstrap the `agent-conf/` directory structure in a repo
+- **`agentconf generate`** — Compile canonical rulesets into tool-specific config files
+- **`agentconf sync`** — Pull shared configurations from remote git repos (public + org-private)
 
 ## Tech Stack
 
@@ -27,7 +27,7 @@ The core abstraction is **hierarchical inheritance** — configurations resolve 
 uv sync
 
 # Run the CLI locally
-uv run agent-conf
+uv run agentconf
 
 # Run tests
 uv run pytest
